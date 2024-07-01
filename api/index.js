@@ -41,8 +41,8 @@ app.get('/api/dinosaurs/diet/:diet', (req, res) => {
 });
 
 app.get('/api/dinosaurs/region/:region', (req, res) => {
-    const region = req.params.region;
-    db.all("SELECT * FROM dinosaur_facts WHERE region = ?", [region], (err, rows) => {
+    const region = req.params.region.toUpperCase();
+    db.all("SELECT * FROM dinosaur_facts WHERE UPPER(region) = ?", [region], (err, rows) => {
         if (err) {
             console.log(err);
             res.status(500).send(err.message);
@@ -53,8 +53,8 @@ app.get('/api/dinosaurs/region/:region', (req, res) => {
 });
 
 app.get('/api/dinosaurs/class/:class', (req, res) => {
-    const dino_class = req.params.class;
-    db.all("SELECT * FROM dinosaur_facts WHERE class = ?", [dino_class], (err, rows) => {
+    const dino_class = req.params.class.toUpperCase();
+    db.all("SELECT * FROM dinosaur_facts WHERE UPPER(class) = ?", [dino_class], (err, rows) => {
         if (err) {
             console.log(err);
             res.status(500).send(err.message);
@@ -65,8 +65,8 @@ app.get('/api/dinosaurs/class/:class', (req, res) => {
 });
 
 app.get('/api/dinosaurs/family/:family', (req, res) => {
-    const family = req.params.family;
-    db.all("SELECT * FROM dinosaur_facts WHERE family = ?", [family], (err, rows) => {
+    const family = req.params.family.toUpperCase();
+    db.all("SELECT * FROM dinosaur_facts WHERE UPPER(family) = ?", [family], (err, rows) => {
         if (err) {
             console.log(err);
             res.status(500).send(err.message);
@@ -75,6 +75,7 @@ app.get('/api/dinosaurs/family/:family', (req, res) => {
         res.status(200).send(rows);
     });
 });
+
 
 app.get('/api/dinosaurs/type/:type', (req, res) => {
     const type = `%${req.params.type}%`; // Add wildcards around the type parameter
