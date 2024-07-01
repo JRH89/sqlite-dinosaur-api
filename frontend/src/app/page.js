@@ -86,7 +86,7 @@ export default function Query() {
           </div>
         </div>
         {results && (
-          <div className='px-2 my-auto justify-center flex flex-col'>
+          <div className='px-2 my-auto justify-center  flex flex-col'>
             <div className="w-full my-8 sm:mb-0 sm:mt-0 lg:mt-0 max-w-lg sm:max-w-2xl lg:max-w-6xl lg:w-full rounded-md bg-white p-4 shadow-lg">
               <h2 className="text-xl font-bold mb-4 text-emerald-800 text-center">Results ({results.length})</h2>
               <div className="overflow-auto max-h-80 lg:grid lg:grid-cols-3 sm:grid-cols-2 sm:grid sm:gap-4">
