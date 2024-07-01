@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import cors from 'cors'; // Import CORS middleware
 import { db } from './connect.js';
 import sqlite3 from 'sqlite3';
+
 const app = express();
 app.use(bodyParser.json());
 app.use(cors()); // Enable CORS for all routes
@@ -16,8 +17,8 @@ app.get('/api', (req, res) => {
 });
 
 app.get('/api/dinosaurs/name/:name', (req, res) => {
-    const name = req.params.name;
-    db.all("SELECT * FROM dinosaur_facts WHERE name = ?", [name], (err, rows) => {
+    const name = req.params.name.toUpperCase();
+    db.all("SELECT * FROM dinosaur_facts WHERE UPPER(name) = ?", [name], (err, rows) => {
         if (err) {
             console.error(err);
             res.status(500).send(err.message);
@@ -89,9 +90,4 @@ app.get('/api/dinosaurs/type/:type', (req, res) => {
     });
 });
 
-app.listen(3001, (err) => {
-    if (err) {
-        console.log("ERROR:", err.message);
-    }
-    console.log("Listening on port 3001...");
-});
+export default app;

@@ -46,7 +46,6 @@ The server will start at http://localhost:3001.
 
 ### Using the API
 
->
 #### Get Dinosaur by Name
 
 To fetch dinosaur facts by name, use curl or any HTTP client:
@@ -57,7 +56,6 @@ curl http://localhost:3001/api/dinosaurs/name/Tyrannosaurus
 ```
 
 Replace Tyrannosaurus with the name of the dinosaur you want to query.
->
 
 #### Get Dinosaur by Type
 
