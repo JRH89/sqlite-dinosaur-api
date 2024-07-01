@@ -89,7 +89,7 @@ export default function Query() {
           <div className='px-2 my-auto justify-center flex flex-col'>
             <div className="w-full my-8 sm:mb-0 sm:mt-0 lg:mt-0 max-w-lg sm:max-w-2xl lg:max-w-6xl lg:w-full rounded-md bg-white p-4 shadow-lg">
               <h2 className="text-xl font-bold mb-4 text-emerald-800 text-center">Results ({results.length})</h2>
-              <div className="overflow-auto max-h-80 lg:grid lg:grid-cols-3  sm:grid-cols-2 sm:grid sm:gap-4">
+              <div className="overflow-auto max-h-80 lg:grid lg:grid-cols-3 sm:grid-cols-2 sm:grid sm:gap-4">
                 {results.map((dinosaur, index) => (
                   <div key={index} className="mb-4 p-4 bg-emerald-800 rounded-md">
                     <h3 className="text-lg font-semibold">{index + 1}. {dinosaur.name}
