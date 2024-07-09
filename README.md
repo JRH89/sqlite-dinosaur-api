@@ -26,7 +26,23 @@ git clone https://github.com/jrh89/sqlite-dinosaur-api.git
 npm install
 ```
 
-### Running the Server
+### Using Frontend
+
+1. CD to the frontend directory
+
+```bash
+cd frontend
+```
+
+2. Start frontend
+
+```bash
+npm start
+```
+
+Open browser to localhost:3000 where you will see the UI for using the API. Spin up the server to start fetching dino facts.
+
+### Spinning Up The Server
 
 To start the server locally:
 
