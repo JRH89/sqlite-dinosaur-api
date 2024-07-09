@@ -17,7 +17,7 @@ export default function Query() {
   const fetchDinosaurs = async () => {
     const encodedQuery = encodeURIComponent(query);
     try {
-      const res = await fetch(`https://sqlite-dinosaur-api.vercel.app/api/dinosaurs/${searchType}/${encodedQuery}`);
+      const res = await fetch(`http://localhost:3001/api/dinosaurs/${searchType}/${encodedQuery}`);
       if (!res.ok) {
         throw new Error('Network response was not ok');
       }

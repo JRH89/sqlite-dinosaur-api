@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors'; // Import CORS middleware
-import { db } from './connect.js';
+import { db } from './api/connect.js';
 import sqlite3 from 'sqlite3';
 
 const app = express();
@@ -88,6 +88,13 @@ app.get('/api/dinosaurs/type/:type', (req, res) => {
         }
         res.status(200).send(rows);
     });
+});
+
+app.listen(3001, (err) => {
+    if (err) {
+        console.log("ERROR:", err.message);
+    }
+    console.log("Listening on port 3001...");
 });
 
 export default app;

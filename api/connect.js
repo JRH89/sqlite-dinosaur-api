@@ -3,7 +3,7 @@ const sql3 = sqlite3.verbose();
 
 // const db = new sql3.Database(":memory:", sqlite3.OPEN_READWRITE, connected);
 // const db = new sql3.Database("", sqlite3.OPEN_READWRITE, connected);
-const db = new sql3.Database("./dinosaurs.db", sqlite3.OPEN_READWRITE, connected);
+const db = new sql3.Database("c:/apps/javascript/api/sqlite-dinosaur-api/api/dinosaurs.db", sqlite3.OPEN_READWRITE, connected);
 
 export default function connected(err) {
     if (err) {
